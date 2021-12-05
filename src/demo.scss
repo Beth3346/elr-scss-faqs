@@ -39,3 +39,7 @@
   position: relative;
   padding: ($base-fontsize * 1.5) 0;
 }
+
+.faq-section {
+  @include elr-faqs;
+}
