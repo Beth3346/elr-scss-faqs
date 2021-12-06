@@ -48,39 +48,111 @@
   $config: extend(
     (
       term-color: $primary-color,
+      border-radius: $border-radius,
+      color: $white,
+      border-color: $light-gray,
+      icon-color: $primary-color,
+      spacing: 8px,
     ),
     $config
   );
 
   $term-color: map-get($config, term-color);
+  $border-radius: map-get($config, border-radius);
+  $color: map-get($config, color);
+  $border-color: map-get($config, border-color);
+  $icon-color: map-get($config, icon-color);
+  $spacing: map-get($config, spacing);
+  $border: 1px solid $border-color;
 
-  @include elr-accordion;
+  dl {
+    @include elr-accordion(
+      $config: (
+        label-color: $term-color,
+        border-radius: $border-radius,
+        color: $color,
+        border-color: $border-color,
+        icon-color: $icon-color,
+        spacing: $spacing,
+      )
+    );
 
-  dt {
-    font-size: $base-fontsize * 1.5;
-    font-weight: 900;
-    margin: 0;
-    padding: 0;
-    color: $term-color;
-  }
+    @if ($spacing == 0) {
+      .accordion-label,
+      .accordion-label:last-of-type:not(.active) {
+        border-bottom: 0;
+        border-radius: 0;
+      }
 
-  .faq {
-    margin: 0;
-    padding: 0;
-  }
+      .accordion-content {
+        border: 0;
+        border-top: 1px solid $border-color;
+      }
 
-  dd {
-    padding: 0;
-    margin: 0;
+      .accordion-label.active {
+        border-radius: 0;
+      }
 
-    div {
-      padding: 0;
-      margin: 0;
+      .accordion-content {
+        border-left: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        border-bottom: 0;
+        border-radius: 0;
+      }
+
+      .accordion-content.active:last-child {
+        border-radius: 0;
+        border-bottom: 0;
+      }
+
+      .faq:first-child {
+        .accordion-label:first-of-type:not(.active),
+        .accordion-label:first-of-type.active {
+          border-radius: $border-radius $border-radius 0 0;
+        }
+      }
+
+      .faq:last-child {
+        .accordion-label:not(.active) {
+          border: 1px solid $border-color;
+          border-radius: 0 0 $border-radius $border-radius;
+        }
+        .accordion-content.active {
+          border-bottom: 1px solid $border-color;
+          border-radius: 0 0 $border-radius $border-radius;
+        }
+      }
     }
 
-    p:last-child {
-      padding-bottom: 0;
-      margin-bottom: 0;
+    dt {
+      font-weight: 900;
+      margin: 0;
+      padding: 0;
+
+      button {
+        color: $term-color;
+        font-size: 18px;
+      }
+    }
+
+    .faq {
+      margin: 0;
+      padding: 0;
+    }
+
+    dd {
+      padding: 0;
+      margin: 0;
+
+      div {
+        padding: 0;
+        margin: 0;
+      }
+
+      p:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
     }
   }
 }

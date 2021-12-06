@@ -40,14 +40,34 @@
   padding: ($base-fontsize * 1.5) 0;
 }
 
-.faq-section {
-  @include elr-faqs;
+.faq-section,
+.faq-accordion,
+.faq-accordion-no-spacing,
+.faq-accordion-no-border {
   max-width: 768px;
   margin: $base-fontsize auto;
 }
 
+.faq-section {
+  @include elr-faqs;
+}
+
 .faq-accordion {
   @include faq-accordion;
-  max-width: 768px;
-  margin: $base-fontsize auto;
+}
+
+.faq-accordion-no-spacing {
+  @include faq-accordion(
+    $config: (
+      spacing: 0,
+    )
+  );
+}
+
+.faq-accordion-no-border {
+  @include faq-accordion(
+    $config: (
+      border-color: none,
+    )
+  );
 }

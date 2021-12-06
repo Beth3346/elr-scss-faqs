@@ -1,9 +1,6 @@
 "use-strict";
 (() => {
-  const accordions = Array.from(
-    document.getElementsByClassName("faq-accordion")
-  );
-  console.log({ accordions });
+  const accordions = Array.from(document.getElementsByClassName("accordion"));
   accordions.forEach(accordion => {
     const buttons = Array.from(accordion.getElementsByTagName("button"));
 
