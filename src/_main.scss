@@ -1,15 +1,16 @@
 @import "elr-scss-functions/src/main";
 @import "elr-scss-config/src/main";
+@import "elr-scss-accordion/src/main";
 
 @mixin elr-faqs($config: ()) {
   $config: extend(
     (
-      heading-color: $primary-color,
+      term-color: $primary-color,
     ),
     $config
   );
 
-  $heading-color: map-get($config, heading-color);
+  $term-color: map-get($config, term-color);
 
   padding: ($base-fontsize * 2) 0;
 
@@ -28,7 +29,7 @@
       margin: 0;
       padding: 0;
       margin-bottom: $base-fontsize;
-      color: $heading-color;
+      color: $term-color;
     }
 
     dd {
@@ -39,6 +40,47 @@
         padding-bottom: 0;
         margin-bottom: 0;
       }
+    }
+  }
+}
+
+@mixin faq-accordion($config: ()) {
+  $config: extend(
+    (
+      term-color: $primary-color,
+    ),
+    $config
+  );
+
+  $term-color: map-get($config, term-color);
+
+  @include elr-accordion;
+
+  dt {
+    font-size: $base-fontsize * 1.5;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    color: $term-color;
+  }
+
+  .faq {
+    margin: 0;
+    padding: 0;
+  }
+
+  dd {
+    padding: 0;
+    margin: 0;
+
+    div {
+      padding: 0;
+      margin: 0;
+    }
+
+    p:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
     }
   }
 }

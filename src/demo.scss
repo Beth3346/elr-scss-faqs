@@ -42,4 +42,12 @@
 
 .faq-section {
   @include elr-faqs;
+  max-width: 768px;
+  margin: $base-fontsize auto;
+}
+
+.faq-accordion {
+  @include faq-accordion;
+  max-width: 768px;
+  margin: $base-fontsize auto;
 }

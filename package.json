@@ -17,13 +17,13 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",
+    "elr-scss-base": "^0.0.10",
+    "elr-scss-reset": "^0.0.8",
     "husky": "^7.0.4",
     "np": "^7.6.0",
     "npm-check-updates": "^12.0.2",
     "parcel": "^2.0.1",
-    "sass": "^1.44.0",
-    "elr-scss-base": "^0.0.10",
-    "elr-scss-reset": "^0.0.8"
+    "sass": "^1.44.0"
   },
   "homepage": "https://github.com/Beth3346/elr-scss-faqs",
   "keywords": [
@@ -35,6 +35,7 @@
     "url": "https://github.com/Beth3346/elr-scss-faqs.git"
   },
   "dependencies": {
+    "elr-scss-accordion": "^1.1.13",
     "elr-scss-config": "^1.1.2",
     "elr-scss-functions": "1.1.6"
   },
