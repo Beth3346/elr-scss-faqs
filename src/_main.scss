@@ -14,6 +14,14 @@
 
   padding: ($base-fontsize * 2) 0;
 
+  h2 {
+    font-weight: 900;
+    font-size: 24px;
+    color: $secondary-color-dark;
+    border-bottom: $border;
+    margin-bottom: 8px;
+  }
+
   .faq {
     border-top: $border;
     padding: ($base-fontsize * 2) ($base-fontsize * 0.5);
@@ -64,6 +72,18 @@
   $icon-color: map-get($config, icon-color);
   $spacing: map-get($config, spacing);
   $border: 1px solid $border-color;
+
+  h2 {
+    font-weight: 900;
+    font-size: 24px;
+    color: $secondary-color-dark;
+    border-bottom: $border;
+    margin-bottom: 24px;
+
+    @if ($border-color == none) {
+      border-bottom: 1px solid $light-gray;
+    }
+  }
 
   dl {
     @include elr-accordion(
