@@ -8,7 +8,7 @@
 
 a scss mixin for faqs
 
-[View Demo](https://elr-faqs.netlify.app/)
+<!-- [View Demo](https://elr-faqs.netlify.app/) -->
 
 ## Installation
 
